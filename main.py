@@ -8,9 +8,26 @@ from pygame.locals import *
 import time
 import os
 
+
+def resource_path(relative_path):
+    """Get absolute path to resource, works for dev and for PyInstaller"""
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
 pygame.init()
 screen = pygame.display.set_mode((1200, 350))
 clock = pygame.time.Clock()
+pygame.display.set_caption('py-quoter by isaboied')
+img = pygame.image.load(resource_path(
+    "icon.jpg/icon.jpg"))  # quick note is that for pyinstaller to work I did this but if you want to run the script
+# itself you should put icon.jpg instead of the one that is there
+pygame.display.set_icon(img)
 
 # Set up the colors
 DARK_PURPLE = (128, 0, 128)
@@ -24,17 +41,6 @@ button_font = pygame.font.SysFont("Bahnshrift", 24)
 # Set up the text
 quote_text = []
 author_text = font.render("", True, BLACK)
-
-
-def resource_path(relative_path):
-    """Get absolute path to resource, works for dev and for PyInstaller"""
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
-    return os.path.join(base_path, relative_path)
 
 
 def get_quote():
