@@ -1,5 +1,5 @@
-# pyquoter
-|A cute little window to display quotes and play music to get inspired (or rather learn about other things)|
-|Currently in Beta|
-future plans are not guranteed :rofl:
-font used "SignikaNegative-SemiBold.ttf" is from Google©️
+***Py-Quoter , the cute window that shows you the best quotes possible XD***<br>
+*By Issac M.*<br>
+**Currently in development (first release is out!!!)**<br>
+***Using A MIT License***<br>
+***and python (like obviously bro)***
